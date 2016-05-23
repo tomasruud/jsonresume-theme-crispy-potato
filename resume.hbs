@@ -17,8 +17,11 @@
 
 <body>
 
-  <div class="container content">
-    <header class="row">
+  <header class="container content">
+    <div class="row">
+
+      <!-- BASIC INFORMATION -->
+
       {{#resume.basics}}
         <div class="twelve columns">
 
@@ -29,7 +32,7 @@
           <h1>{{name}}</h1>
 
           {{#if label}}
-            <div id="label">{{label}}</div>
+            <div class="impact">{{label}}</div>
           {{/if}}
 
           {{#location}}
@@ -67,37 +70,94 @@
 
         {{#if summary}}
           <div class="twelve columns">
-            <p class="summary">
+            <p id="summary">
               {{summary}}
             </p>
           </div>
         {{/if}}
 
         {{#if profiles}}
-          <footer>
+          <div class="twelve columns">
             <ul class="unstyled">
               {{#each profiles}}
                 <li>
                   <a href="{{url}}" target="_blank">
-                    <i class="fa fa-{{get_network_class network}}" aria-hidden="true"></i>{{url}}
+                    <i class="fa fa-{{get_network_class network}}" aria-hidden="true"></i>@{{username}}
                   </a>
                 </li>
               {{/each}}
             </ul>
-          </footer>
+          </div>
         {{/if}}
       {{/resume.basics}}
-    </header>
 
-  </div>
+      <!-- /BASIC INFOMATION -->
 
-  <div class="container content">
-    <main class="row">
-      <div class="twelve columns">
-        <h2>{{@root.t.experience}}</h2>
+    </div>
+  </header>
+
+  <main class="container content">
+
+    <!-- WORK -->
+    {{#if resume.work.length}}
+      <div class="row">
+        <div class="twelve columns" id="work">
+          <h2>{{@root.t.experience}}</h2>
+
+          {{#each resume.work}}
+            <div class="row">
+              <div class="four columns">
+                {{#if company}}
+                  <h3>
+                    {{#if website}}
+                      <a href="{{website}}" target="_blank">{{company}}</a>
+                    {{else}}
+                      {{company}}
+                    {{/if}}
+                  </h3>
+                {{/if}}
+
+                {{#if position}}
+                  <strong>{{position}}</strong>
+                  <br>
+                {{/if}}
+
+                {{{get_work_date @this}}}
+              </div>
+
+              <div class="eight columns">
+                {{#if summary}}
+                  <p>{{summary}}</p>
+                {{/if}}
+
+                {{#if highlights.length}}
+                  <ul>
+                    {{#each highlights}}
+                      <li>{{@this}}</li>
+                    {{/each}}
+                  </ul>
+                {{/if}}
+              </div>
+            </div>
+          {{/each}}
+        </div>
       </div>
-    </main>
-  </div>
+    {{/if}}
+
+    <!-- /WORK -->
+
+    <!-- EDUCATION -->
+
+    {{#if resume.education.length}}
+      <div class="row">
+        <div class="twelve columns" id="education">
+          <h2>{{@root.t.education}}</h2>
+        </div>
+      </div>
+    {{/if}}
+
+    <!-- /EDUCATION -->
+  </main>
 </body>
 
 </html>

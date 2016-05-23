@@ -2,6 +2,11 @@ html {
   box-sizing: border-box;
 }
 
+::selection {
+  background-color: $accent-color;
+  color: #fff;
+}
+
 *,
 *:after,
 *:before {
@@ -34,12 +39,18 @@ body {
     padding: 4rem;
   }
 }
+
 @media print {
   body {
     background-image: none;
   }
 
   .content {
-    border: 0;
+    border: none;
+    border-bottom: 2px solid $content-border;
+
+    &:last-child {
+      border: 0;
+    }
   }
 }

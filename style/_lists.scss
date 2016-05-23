@@ -1,8 +1,20 @@
 ul {
-  margin: 0;
   padding: 0;
+  margin-left: 1.5rem;
+
+  list-style: outside;
+
+  li {
+    padding-left: .5rem;
+  }
 }
 
 .unstyled {
   list-style-type: none;
+
+  margin: 0;
+
+  li {
+    padding: 0;
+  }
 }

@@ -7,5 +7,21 @@
   "education": "Utdanning",
   "skills": "Ferdigheter",
   "interests": "Interesser",
-  "references": "Referanser"
+  "references": "Referanser",
+  "summary": "Beskrivelse",
+  "highlights": "Nøkkelord",
+  "months": [
+    "Jan.",
+    "Feb.",
+    "Mar.",
+    "Apr.",
+    "Mai.",
+    "Jun.",
+    "Jul.",
+    "Aug.",
+    "Sept.",
+    "Okt.",
+    "Nov.",
+    "Des."
+  ]
 }

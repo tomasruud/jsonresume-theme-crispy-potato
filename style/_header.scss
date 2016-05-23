@@ -1,7 +1,3 @@
-#label {
-  font-size: 1.2rem;
-}
-
 #cv-image {
   margin: 0 auto 1rem;
   max-width: 50%;
@@ -11,6 +7,10 @@
 #area {
   color: $accent-color;
   margin: 1rem 0;
+}
+
+#summary {
+  margin-top: 1rem;
 }
 
 @media print, (min-width: $breakpoint) {
