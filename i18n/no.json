@@ -1,3 +1,11 @@
 {
-  "website": "Nettside"
+  "website": "Nettside",
+  "email": "E-post",
+  "phone": "Telefon",
+  "address": "Adresse",
+  "experience": "Arbeidserfaring",
+  "education": "Utdanning",
+  "skills": "Ferdigheter",
+  "interests": "Interesser",
+  "references": "Referanser"
 }

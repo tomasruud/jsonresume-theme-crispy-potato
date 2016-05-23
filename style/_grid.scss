@@ -24,7 +24,7 @@ $column-width: 100 / $total-columns;
   width: 100%;
   max-width: $page-width;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 1rem;
   box-sizing: border-box;
 }
 
@@ -35,11 +35,11 @@ $column-width: 100 / $total-columns;
   box-sizing: border-box;
 }
 
-
 @media (min-width: $breakpoint) {
   .column,
   .columns {
     margin-left: $column-margin;
+    margin-bottom: 0;
   }
   .column:first-child,
   .columns:first-child {

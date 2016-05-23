@@ -1,12 +1,19 @@
+$font-size-base: 14px;
+$font-size-large: 18px;
+
 $body-bg: #fafafa;
-$body-image: "http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/school.png";
 $content-bg: #fff;
 $content-border: #f5f5f5;
-$text-color: lighten(#000, 13%);
-$body-font: "Asap";
-$header-font: "Bitter";
+$text-color: rgba(#000, .87);
+$accent-color: #880E4F;
+$faded-color: rgba(#000, .54);
 
-$breakpoint: 450px;
+$body-image: "http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/school.png";
+
+$body-font: "Asap";
+$header-font: "Noto Serif";
+
+$breakpoint: 700px;
 
 $column-margin: 4%;
 $page-width: 960px;

@@ -12,21 +12,20 @@ body {
   background-color: $body-bg;
   background-image: url($body-image);
 
-  margin: 20px;
+  margin: 1rem;
 }
 
 #content {
-  padding: 50px;
+  padding: 2rem;
 
   background-color: $content-bg;
 
   border: 1px solid $content-border;
 }
 
-@media only screen and (min-width: $breakpoint) {}
-@media print, screen and (min-width: $breakpoint) {
+@media (min-width: $breakpoint) {
   #content {
-    padding: 80px;
+    padding: 4rem;
   }
 }
 @media print {

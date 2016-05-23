@@ -4,15 +4,52 @@
 @import url(font($header-font));
 
 html {
-  font-size: 14px;
+  font-size: $font-size-base;
 }
 
 body {
   font-family: $body-font, Arial, Helvetica, sans-serif;
   font-size: 1rem;
-  color: $text-color;
+
   letter-spacing: .05rem;
   line-height: 1.5rem;
+
+  color: $text-color;
+
+  text-align: center;
+}
+
+p {
+  text-align: justify;
+  margin: 1rem 0;
+}
+
+@media (min-width: $breakpoint) {
+  html {
+    font-size: $font-size-large;
+  }
+
+  body {
+    text-align: left;
+  }
+
+  p {
+    text-align: left;
+  }
+}
+
+.fa {
+  min-width: 1.75rem;
+}
+
+a {
+  text-decoration: none;
+  color: $accent-color;
+
+  &:hover {
+    color: $text-color;
+    text-decoration: underline;
+  }
 }
 
 h1,
@@ -26,12 +63,12 @@ h6 {
   line-height: 1;
   font-family: $header-font, Georgia, Times, serif;
   font-weight: normal;
+
+  margin-bottom: 1rem;
 }
 
 h1 {
   font-size: 3rem;
-
-  margin-bottom: 1rem;
 }
 
 h2 {

@@ -4,6 +4,10 @@ var sass = require('node-sass');
 
 var language = 'no';
 
+Handlebars.registerHelper('get_network_class', function (network) {
+  return network.toLowerCase().replace(' ', '-');
+});
+
 function render(resume) {
 
   var css = sass.renderSync({

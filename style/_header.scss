@@ -1,0 +1,25 @@
+#label {
+  font-size: 1.2rem;
+}
+
+#cv-image {
+  margin: 0 auto 1rem;
+  max-width: 50%;
+  display: block;
+}
+
+#area {
+  color: $accent-color;
+  margin: 1rem 0;
+}
+
+@media (min-width: $breakpoint) {
+  #cv-image {
+    margin: 0;
+
+    width: 13.5rem;
+
+    display: inline-block;
+    float: right;
+  }
+}
