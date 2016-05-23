@@ -1,0 +1,40 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: $body-bg;
+  background-image: url($body-image);
+
+  margin: 20px;
+}
+
+#content {
+  padding: 50px;
+
+  background-color: $content-bg;
+
+  border: 1px solid $content-border;
+}
+
+@media only screen and (min-width: $breakpoint) {}
+@media print, screen and (min-width: $breakpoint) {
+  #content {
+    padding: 80px;
+  }
+}
+@media print {
+  body {
+    background-image: none;
+  }
+
+  #content {
+    border: 0;
+  }
+}

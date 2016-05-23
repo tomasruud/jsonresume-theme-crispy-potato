@@ -9,7 +9,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "handlebars": "^2.0.0-alpha.4",
-    "node-sass": "^3.7.0"
+    "handlebars": "^4.0.5",
+    "node-sass": "^3.7.0",
+    "normalize.css": "^4.1.1"
   }
 }

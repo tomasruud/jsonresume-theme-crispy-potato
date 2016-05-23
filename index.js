@@ -1,18 +1,23 @@
-var fs = require("fs");
-var Handlebars = require("handlebars");
+var fs = require('fs');
+var Handlebars = require('handlebars');
 var sass = require('node-sass');
+
+var language = 'no';
 
 function render(resume) {
 
   var css = sass.renderSync({
-    file: './style/crispy-potato.scss'
+    file: __dirname + './style.scss'
   }).css;
 
-  var tpl = fs.readFileSync(__dirname + "/resume.hbs", "utf-8");
+  var template = Handlebars.compile(fs.readFileSync('./resume.hbs', 'utf-8'));
+  var translation = JSON.parse(fs.readFileSync('./i18n/' + language + '.json', 'utf-8'));
 
-  return Handlebars.compile(tpl)({
-    css: css,
-    resume: resume
+  return template({
+    css: '<style>' + css + '</style>',
+    resume: resume,
+    t: translation,
+    language: language
   });
 }
 

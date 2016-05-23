@@ -1,0 +1,7 @@
+@function font($name) {
+  $index: str-index($name, " ");
+  @if $index {
+     @return str-slice($name, 1, $index - 1) +"+" + font(str-slice($name, $index + 1));
+  }
+  @return "https://fonts.googleapis.com/css?family=" + $name + ":400,400italic,700,700italic";
+}
