@@ -13,11 +13,11 @@
   margin: 1rem 0;
 }
 
-@media (min-width: $breakpoint) {
+@media print, (min-width: $breakpoint) {
   #cv-image {
     margin: 0;
 
-    width: 13.5rem;
+    width: 13rem;
 
     display: inline-block;
     float: right;

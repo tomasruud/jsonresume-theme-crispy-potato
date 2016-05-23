@@ -17,14 +17,20 @@
 
 <body>
 
-  <div id="content" class="container">
+  <div class="container content">
     <header class="row">
       {{#resume.basics}}
         <div class="twelve columns">
-          <img src="{{picture}}" alt="CV image" id="cv-image">
+
+          {{#if picture}}
+            <img src="{{picture}}" alt="CV image" id="cv-image">
+          {{/if}}
 
           <h1>{{name}}</h1>
-          <div id="label">{{label}}</div>
+
+          {{#if label}}
+            <div id="label">{{label}}</div>
+          {{/if}}
 
           {{#location}}
             <div id="area">
@@ -59,35 +65,38 @@
           </ul>
         </div>
 
-        <div class="twelve columns">
-          {{#if summary}}
+        {{#if summary}}
+          <div class="twelve columns">
             <p class="summary">
               {{summary}}
             </p>
-          {{/if}}
-        </div>
+          </div>
+        {{/if}}
+
+        {{#if profiles}}
+          <footer>
+            <ul class="unstyled">
+              {{#each profiles}}
+                <li>
+                  <a href="{{url}}" target="_blank">
+                    <i class="fa fa-{{get_network_class network}}" aria-hidden="true"></i>{{url}}
+                  </a>
+                </li>
+              {{/each}}
+            </ul>
+          </footer>
+        {{/if}}
       {{/resume.basics}}
     </header>
 
-    <main>
-      {{#if website}}
-        <li>
-          <strong>{{@root.t.website}}</strong> {{website}}
-        </li>
-      {{/if}}
-    </main>
+  </div>
 
-    <footer>
-      <ul class="unstyled">
-        {{#each resume.basics.profiles}}
-          <li>
-            <a href="{{url}}" target="_blank">
-              <i class="fa fa-{{get_network_class network}}" aria-hidden="true"></i>{{url}}
-            </a>
-          </li>
-        {{/each}}
-      </ul>
-    </footer>
+  <div class="container content">
+    <main class="row">
+      <div class="twelve columns">
+        <h2>{{@root.t.experience}}</h2>
+      </div>
+    </main>
   </div>
 </body>
 

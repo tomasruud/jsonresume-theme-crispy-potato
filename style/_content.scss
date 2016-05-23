@@ -15,16 +15,22 @@ body {
   margin: 1rem;
 }
 
-#content {
+.content {
   padding: 2rem;
 
   background-color: $content-bg;
 
   border: 1px solid $content-border;
+
+  margin-bottom: 1rem;
+}
+
+.content:last-child {
+  margin-bottom: 0;
 }
 
 @media (min-width: $breakpoint) {
-  #content {
+  .content {
     padding: 4rem;
   }
 }
@@ -33,7 +39,7 @@ body {
     background-image: none;
   }
 
-  #content {
+  .content {
     border: 0;
   }
 }

@@ -28,7 +28,10 @@ p {
   html {
     font-size: $font-size-large;
   }
+}
 
+
+@media print, (min-width: $breakpoint) {
   body {
     text-align: left;
   }
