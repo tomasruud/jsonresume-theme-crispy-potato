@@ -1,0 +1,15 @@
+{
+  "name": "jsonresume-theme-crispy-potato",
+  "version": "0.1.0",
+  "description": "Cool theme for my CV.",
+  "author": "Tomas Ruud",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomasruud/jsonresume-theme-crispy-potato"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "handlebars": "^2.0.0-alpha.4",
+    "node-sass": "^3.7.0"
+  }
+}
