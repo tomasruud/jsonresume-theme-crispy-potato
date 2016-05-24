@@ -46,10 +46,6 @@ $column-width: 100 / $total-columns;
     margin-left: 0;
   }
 
-  .row:not(:first-child) {
-    margin-top: 4rem;
-  }
-
   .one.column,
   .one.columns          { width: grid-column-width(1);  }
   .two.columns          { width: grid-column-width(2);  }

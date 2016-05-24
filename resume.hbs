@@ -79,6 +79,13 @@
         {{#if profiles}}
           <div class="twelve columns">
             <ul class="unstyled">
+              {{#if website}}
+                <li>
+                  <a href="{{website}}" target="_blank">
+                    <i class="fa fa-globe" aria-hidden="true"></i>{{website}}
+                  </a>
+                </li>
+              {{/if}}
               {{#each profiles}}
                 <li>
                   <a href="{{url}}" target="_blank">
@@ -105,8 +112,8 @@
           <h2>{{@root.t.experience}}</h2>
 
           {{#each resume.work}}
-            <div class="row">
-              <div class="four columns">
+            <article class="row">
+              <header class="four columns">
                 {{#if company}}
                   <h3>
                     {{#if website}}
@@ -123,7 +130,7 @@
                 {{/if}}
 
                 {{{get_work_date @this}}}
-              </div>
+              </header>
 
               <div class="eight columns">
                 {{#if summary}}
@@ -138,7 +145,7 @@
                   </ul>
                 {{/if}}
               </div>
-            </div>
+            </article>
           {{/each}}
         </div>
       </div>

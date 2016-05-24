@@ -10,13 +10,19 @@
   font-family: $body-font;
 }
 
-#work .row {
-  margin-top: 2rem;
-}
-
 #work {
   .column:not(:last-child),
   .columns:not(:last-child), {
     margin-bottom: 1rem;
+  }
+}
+
+#work .row {
+  padding-bottom: 2rem;
+}
+
+@media print {
+  #work .row {
+    padding: 0 0 1rem;
   }
 }

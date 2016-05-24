@@ -16,8 +16,9 @@ function render(resume) {
   function format_date(date_string) {
     var date = new Date(date_string);
 
-    if (!date)
+    if (!date.getFullYear())
       return date_string;
+
     var output = '';
 
     return translation.months[date.getMonth()] + ' ' + date.getFullYear();
@@ -33,10 +34,12 @@ function render(resume) {
     if (work.startDate)
       date += format_date(work.startDate);
 
-    date += " &ndash; ";
-
-    if (work.endDate)
+    if (work.endDate) {
+      date += " &ndash; ";
       date += format_date(work.endDate);
+    } else {
+      date = translation.since + " " + date; 
+    }
 
     return date;
   });
