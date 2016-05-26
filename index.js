@@ -16,16 +16,32 @@ function render(resume) {
   function format_date(date_string) {
     var date = new Date(date_string);
 
-    if (!date.getFullYear())
+    if (!date.getFullYear() || !date_string)
       return date_string;
 
+    var stuff = date_string.split('-');
     var output = '';
 
-    return translation.months[date.getMonth()] + ' ' + date.getFullYear();
+    if(stuff[1] && stuff[1] !== '')
+      output += translation.months[date.getMonth()] + ' ';
+
+    return output + date.getFullYear();
   }
 
   Handlebars.registerHelper('get_network_class', function (network) {
     return network.toLowerCase().replace(' ', '-');
+  });
+
+  Handlebars.registerHelper('if_new_row', function (index, options) {
+    if(index % 3 === 0) {
+      return options.fn(this);
+    }
+  });
+
+  Handlebars.registerHelper('if_end_row', function (index, options) {
+    if(index % 3 === 2) {
+      return options.fn(this);
+    }
   });
 
   Handlebars.registerHelper('get_work_date', function (work) {
@@ -38,7 +54,7 @@ function render(resume) {
       date += " &ndash; ";
       date += format_date(work.endDate);
     } else {
-      date = translation.since + " " + date; 
+      date = translation.since + " " + date;
     }
 
     return date;

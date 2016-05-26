@@ -1,0 +1,34 @@
+.item h3,
+.item h4 {
+  font-size: 1rem;
+  line-height: 1.5;
+
+  margin-bottom: 0;
+  font-family: $body-font;
+
+  .level {
+    font-size: .7rem;
+    color: $faded-color;
+  }
+}
+
+.item {
+  .column:not(:last-child),
+  .columns:not(:last-child), {
+    margin-bottom: 1rem;
+  }
+}
+
+.item .row {
+  padding-bottom: 2rem;
+
+  &.no-padding {
+    padding-bottom: 0;
+  }
+}
+
+@media print, (min-width: $breakpoint) {
+  .item .row {
+    padding: 0 0 1rem;
+  }
+}

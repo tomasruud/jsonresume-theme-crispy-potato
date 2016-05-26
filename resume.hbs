@@ -21,7 +21,6 @@
     <div class="row">
 
       <!-- BASIC INFORMATION -->
-
       {{#resume.basics}}
         <div class="twelve columns">
 
@@ -97,7 +96,6 @@
           </div>
         {{/if}}
       {{/resume.basics}}
-
       <!-- /BASIC INFOMATION -->
 
     </div>
@@ -107,8 +105,8 @@
 
     <!-- WORK -->
     {{#if resume.work.length}}
-      <div class="row">
-        <div class="twelve columns" id="work">
+      <section class="row">
+        <div id="work" class="twelve columns item">
           <h2>{{@root.t.experience}}</h2>
 
           {{#each resume.work}}
@@ -148,22 +146,116 @@
             </article>
           {{/each}}
         </div>
-      </div>
+      </section>
     {{/if}}
-
     <!-- /WORK -->
 
     <!-- EDUCATION -->
-
     {{#if resume.education.length}}
-      <div class="row">
-        <div class="twelve columns" id="education">
+      <section class="row">
+        <div id="education" class="twelve columns item">
           <h2>{{@root.t.education}}</h2>
-        </div>
-      </div>
-    {{/if}}
 
+          {{#each resume.education}}
+            <article class="row">
+              <header class="four columns">
+                {{#if institution}}
+                  <h3>{{institution}}</h3>
+                {{/if}}
+
+                {{#if area}}
+                  <strong>{{area}}</strong>
+                  <br>
+                {{/if}}
+
+                {{#if studyType}}
+                  {{studyType}}
+                  <br>
+                {{/if}}
+
+                {{{get_work_date @this}}}
+              </header>
+
+              <div class="eight columns">
+                {{#if courses.length}}
+                  <ul>
+                    {{#each courses}}
+                      <li>{{@this}}</li>
+                    {{/each}}
+                  </ul>
+                {{/if}}
+              </div>
+            </article>
+          {{/each}}
+        </div>
+      </section>
+    {{/if}}
     <!-- /EDUCATION -->
+
+    <!-- SKILLS -->
+    {{#if resume.skills.length}}
+      <section class="row">
+        <div id="skills" class="twelve columns item">
+          <h2>{{@root.t.skills}}</h2>
+
+          {{#each resume.skills}}
+            {{#if_new_row @index}}
+              <div class="row no-padding">
+            {{/if_new_row}}
+
+            <article class="four columns">
+              <h3>
+                {{name}}
+                {{#if level}}
+                  <span class="level">({{level}})</span>
+                {{/if}}
+              </h3>
+
+              {{#if keywords.length}}
+                <ul>
+                  {{#each keywords}}
+                    <li>{{@this}}</li>
+                  {{/each}}
+                </ul>
+              {{/if}}
+            </article>
+
+            {{#if_end_row @index}}
+              </div>
+            {{/if_end_row}}
+          {{/each}}
+        </div>
+      </section>
+    {{/if}}
+    <!-- /SKILLS -->
+
+    <!-- LANGUAGES -->
+    {{#if resume.languages.length}}
+      <section class="row">
+        <div id="languages" class="twelve columns item">
+          <h2>{{@root.t.languages}}</h2>
+
+          {{#each resume.languages}}
+            {{#if_new_row @index}}
+              <div class="row no-padding">
+            {{/if_new_row}}
+
+            <article class="four columns">
+              <h3>{{language}}</h3>
+              <p>{{fluency}}</p>
+            </article>
+
+            {{#if_end_row @index}}
+              </div>
+            {{/if_end_row}}
+          {{/each}}
+        </div>
+      </section>
+    {{/if}}
+    <!-- /LANGUAGES -->
+
+    <!-- INTERESTS -->
+    <!-- /INTERESTS -->
   </main>
 </body>
 
