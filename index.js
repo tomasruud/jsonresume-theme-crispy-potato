@@ -7,11 +7,11 @@ var language = 'no';
 function render(resume) {
 
   var css = sass.renderSync({
-    file: __dirname + './style.scss'
+    file: __dirname + '/style.scss'
   }).css;
 
-  var template = Handlebars.compile(fs.readFileSync('./resume.hbs', 'utf-8'));
-  var translation = JSON.parse(fs.readFileSync('./i18n/' + language + '.json', 'utf-8'));
+  var template = Handlebars.compile(fs.readFileSync(__dirname + '/resume.hbs', 'utf-8'));
+  var translation = JSON.parse(fs.readFileSync(__dirname + '/i18n/' + language + '.json', 'utf-8'));
 
   function format_date(date_string) {
     var date = new Date(date_string);
