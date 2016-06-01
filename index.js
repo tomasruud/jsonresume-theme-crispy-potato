@@ -2,7 +2,7 @@ var fs = require('fs');
 var Handlebars = require('handlebars');
 var sass = require('node-sass');
 
-var language = 'no';
+var language = 'en';
 
 function render(resume) {
 
@@ -11,7 +11,14 @@ function render(resume) {
   }).css;
 
   var template = Handlebars.compile(fs.readFileSync('./resume.hbs', 'utf-8'));
-  var translation = JSON.parse(fs.readFileSync('./i18n/' + language + '.json', 'utf-8'));
+
+  if(resume.basics && resume.basics.location && resume.basics.location.countryCode) {
+    if(resume.basics.location.countryCode === 'NO') {
+      language = 'no';
+    }
+  }
+
+  var translation = require('./i18n/' + language + '.json');
 
   function format_date(date_string) {
     var date = new Date(date_string);

@@ -1,0 +1,30 @@
+{
+  "website": "website",
+  "email": "Email",
+  "phone": "Phone",
+  "address": "Address",
+  "experience": "Experience",
+  "education": "Education",
+  "skills": "Skills",
+  "interests": "Interests",
+  "references": "References",
+  "summary": "Summary",
+  "highlights": "Highlights",
+  "since": "Since",
+  "areas": "Areas",
+  "languages": "Languages",
+  "months": [
+    "Jan.",
+    "Feb.",
+    "Mar.",
+    "Apr.",
+    "May",
+    "June",
+    "July",
+    "Aug.",
+    "Sept.",
+    "Oct.",
+    "Nov.",
+    "Dec."
+  ]
+}
