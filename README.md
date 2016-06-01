@@ -1,5 +1,10 @@
 # Crispy Potato theme
-This is a theme for [JSON Resume](http://jsonresume.org/).
+[![forthebadge](http://forthebadge.com/images/badges/uses-badges.svg)](http://forthebadge.com)
+[![forthebadge](http://forthebadge.com/images/badges/as-seen-on-tv.svg)](http://forthebadge.com)
+
+Crisp, translatable and print-friendly theme for [JSON Resumes](http://jsonresume.org/).
+
+Preview here: http://registry.jsonresume.org/thomasdavis?theme=crispy-potato
 
 ## License
 

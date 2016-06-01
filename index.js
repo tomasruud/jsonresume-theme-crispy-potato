@@ -7,7 +7,7 @@ var language = 'en';
 function render(resume) {
 
   var css = sass.renderSync({
-    file: __dirname + './style.scss'
+    file: __dirname + '/style.scss'
   }).css;
 
   var template = Handlebars.compile(fs.readFileSync('./resume.hbs', 'utf-8'));
