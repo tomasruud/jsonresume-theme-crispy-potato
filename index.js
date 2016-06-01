@@ -10,7 +10,7 @@ function render(resume) {
     file: __dirname + '/style.scss'
   }).css;
 
-  var template = Handlebars.compile(fs.readFileSync('./resume.hbs', 'utf-8'));
+  var template = Handlebars.compile(fs.readFileSync(__dirname + '/resume.hbs', 'utf-8'));
 
   if(resume.basics && resume.basics.location && resume.basics.location.countryCode) {
     if(resume.basics.location.countryCode === 'NO') {
@@ -18,7 +18,7 @@ function render(resume) {
     }
   }
 
-  var translation = require('./i18n/' + language + '.json');
+  var translation = require(__dirname + '/i18n/' + language + '.json');
 
   function format_date(date_string) {
     var date = new Date(date_string);
