@@ -39,6 +39,23 @@ function render(resume) {
     return network.toLowerCase().replace(' ', '-');
   });
 
+  Handlebars.registerHelper('get_pretty_location', function (data) {
+    var region = data.region;
+    var countryCode = data.countryCode;
+    
+    var out = '';
+
+    if(region && region !== '') {
+      out += region + ', ';
+    }
+
+    if(countryCode && countryCode !== '') {
+      out += countryCode;
+    }
+
+    return out === '' ? false : out;
+  });
+
   Handlebars.registerHelper('if_new_row', function (index, options) {
     if(index % 3 === 0) {
       return options.fn(this);

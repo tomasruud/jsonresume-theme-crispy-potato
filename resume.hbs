@@ -36,7 +36,7 @@
 
           {{#location}}
             <div id="area">
-              <i class="fa fa-map-marker" aria-hidden="true"></i>{{region}}, {{countryCode}}
+              <i class="fa fa-map-marker" aria-hidden="true"></i>{{get_pretty_location @this}}
             </div>
           {{/location}}
 
@@ -158,33 +158,39 @@
 
           {{#each resume.education}}
             <article class="row">
-              <header class="four columns">
-                {{#if institution}}
-                  <h3>{{institution}}</h3>
-                {{/if}}
+              {{#if courses.length}}
+                <header class="four columns">
+              {{else}}
+                <header class="twelve columns">
+              {{/if}}
 
-                {{#if area}}
-                  <strong>{{area}}</strong>
-                  <br>
-                {{/if}}
 
-                {{#if studyType}}
-                  {{studyType}}
-                  <br>
-                {{/if}}
+              {{#if institution}}
+                <h3>{{institution}}</h3>
+              {{/if}}
 
-                {{{get_work_date @this}}}
+              {{#if area}}
+                <strong>{{area}}</strong>
+                <br>
+              {{/if}}
+
+              {{#if studyType}}
+                {{studyType}}
+                <br>
+              {{/if}}
+
+              {{{get_work_date @this}}}
               </header>
 
-              <div class="eight columns">
-                {{#if courses.length}}
+              {{#if courses.length}}
+                <div class="eight columns">
                   <ul>
                     {{#each courses}}
                       <li>{{@this}}</li>
                     {{/each}}
                   </ul>
-                {{/if}}
-              </div>
+                </div>
+              {{/if}}
             </article>
           {{/each}}
         </div>
