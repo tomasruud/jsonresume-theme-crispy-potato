@@ -7,10 +7,16 @@
     "type": "git",
     "url": "https://github.com/tomasruud/jsonresume-theme-crispy-potato"
   },
+  "scripts": {
+    "dev": "resume serve"
+  },
   "license": "MIT",
   "dependencies": {
     "handlebars": "^4.0.5",
-    "node-sass": "^3.7.0",
+    "node-sass": "^4.5.3",
     "normalize.css": "^4.1.1"
+  },
+  "devDependencies": {
+    "resume-cli": "^0.4.19"
   }
 }
