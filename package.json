@@ -14,7 +14,7 @@
   "dependencies": {
     "handlebars": "^4.0.5",
     "node-sass": "^4.5.3",
-    "normalize.css": "^4.1.1"
+    "normalize.css": "^7.0.0"
   },
   "devDependencies": {
     "resume-cli": "^0.4.19"
